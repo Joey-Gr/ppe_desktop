@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="FeedEk.min.js"></script>  
+    <form method="post" id="form">
+        <span>Collez l'url du flux ici :</span>
+        <input type="text" id="rssUrl">
+        <br>
+        <span>Puis la quantité d'articles</span>
+        <input type="number" name="amount of articles" value="16" id="amount">
+        <br>        
+        <input type="button" value="enter" id="enter">
+    </form>
+
+    <div id="divRss">
+        <script>
+            var form = document.getElementById("form");
+            form.enter.onclick = function()
+            {
+                var url = document.getElementById("rssUrl").value;
+                var amount = document.getElementById("amount").value;
+                $('#divRss').FeedEk({
+                    FeedUrl : url,
+                    MaxCount : amount,
+                });
+            }
+        </script>
+    </div>
+    <br>
+    Par example : https://coquillages.com/category/articles/feed/
+</body>
+</html>
