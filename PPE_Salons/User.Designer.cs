@@ -37,11 +37,13 @@ namespace PPE_Salons
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboActive = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEnr
             // 
-            this.btnEnr.Location = new System.Drawing.Point(293, 295);
+            this.btnEnr.Location = new System.Drawing.Point(293, 324);
             this.btnEnr.Name = "btnEnr";
             this.btnEnr.Size = new System.Drawing.Size(87, 23);
             this.btnEnr.TabIndex = 0;
@@ -51,6 +53,7 @@ namespace PPE_Salons
             // 
             // comboLevel
             // 
+            this.comboLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLevel.FormattingEnabled = true;
             this.comboLevel.Items.AddRange(new object[] {
             "Admin",
@@ -80,9 +83,9 @@ namespace PPE_Salons
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(87, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "nom utilisateur";
+            this.label1.Text = "nom participant";
             // 
             // label2
             // 
@@ -99,9 +102,9 @@ namespace PPE_Salons
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(580, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 17);
+            this.label3.Size = new System.Drawing.Size(221, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Creation Utilisateur - Page Admin";
+            this.label3.Text = "Creation Participant - Page Admin";
             // 
             // label4
             // 
@@ -112,11 +115,34 @@ namespace PPE_Salons
             this.label4.TabIndex = 7;
             this.label4.Text = "niveau";
             // 
+            // comboActive
+            // 
+            this.comboActive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboActive.FormattingEnabled = true;
+            this.comboActive.Items.AddRange(new object[] {
+            "Oui",
+            "Non"});
+            this.comboActive.Location = new System.Drawing.Point(196, 282);
+            this.comboActive.Name = "comboActive";
+            this.comboActive.Size = new System.Drawing.Size(307, 24);
+            this.comboActive.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(109, 289);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "activé?";
+            // 
             // UserLoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboActive);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -143,5 +169,7 @@ namespace PPE_Salons
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboActive;
+        private System.Windows.Forms.Label label5;
     }
 }

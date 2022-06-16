@@ -21,11 +21,17 @@ namespace PPE_Salons
         private void UserLoad_Load(object sender, EventArgs e)
         {
             var ComboLevelSource = new List<ComboValue>();
-            ComboLevelSource.Add(new ComboValue() { Name = "Admin", Value = "1" });
             ComboLevelSource.Add(new ComboValue() { Name = "Utilisateur", Value = "0" });
+            ComboLevelSource.Add(new ComboValue() { Name = "Admin", Value = "1" });
+            var ComboActiveSource = new List<ComboValue>();
+            ComboActiveSource.Add(new ComboValue() { Name = "Oui", Value = "1" });
+            ComboActiveSource.Add(new ComboValue() { Name = "Non", Value = "0" });
             comboLevel.DataSource = ComboLevelSource;
             comboLevel.DisplayMember = "Name";
             comboLevel.ValueMember = "Value";
+            comboActive.DataSource = ComboActiveSource;
+            comboActive.DisplayMember = "Name";
+            comboActive.ValueMember = "Value";
         }
 
         private void btnEnr_Click(object sender, EventArgs e)
@@ -39,21 +45,28 @@ namespace PPE_Salons
                 dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");//Pour éviter d'afficher le mot de passe en clair dans le code
                 if (dbCon.IsConnect())
                 {
-                    ComboValue MaComboValue = (ComboValue)comboLevel.SelectedItem;
+                    ComboValue ComboLevel = (ComboValue)comboLevel.SelectedItem;
+                    ComboValue ComboActive = (ComboValue)comboActive.SelectedItem;
+
 
                     String sqlString = "AjouterUtilisateur";
                     var cmd = new MySqlCommand(sqlString, dbCon.Connection);
                     cmd.CommandType = CommandType.StoredProcedure; //Il faut System.Data pour cette ligne
+
+                    var mdpHash = SHA.MakeMD5Hash(tbMdp.Text);
 
                     cmd.Parameters.Add("@NomEntree", MySqlDbType.VarChar);
                     cmd.Parameters["@NomEntree"].Direction = ParameterDirection.Input;
                     cmd.Parameters["@NomEntree"].Value = tbName.Text;
                     cmd.Parameters.Add("@LePass", MySqlDbType.Text);
                     cmd.Parameters["@LePass"].Direction = ParameterDirection.Input;
-                    cmd.Parameters["@LePass"].Value = SHA.petitsha(tbMdp.Text);
+                    cmd.Parameters["@LePass"].Value = mdpHash;
                     cmd.Parameters.Add("@NivEntree", MySqlDbType.Int32);
                     cmd.Parameters["@NivEntree"].Direction = ParameterDirection.Input;
-                    cmd.Parameters["@NivEntree"].Value = MaComboValue.Value;
+                    cmd.Parameters["@NivEntree"].Value = ComboLevel.Value;
+                    cmd.Parameters.Add("@ActifEntree", MySqlDbType.Int32);
+                    cmd.Parameters["@ActifEntree"].Direction = ParameterDirection.Input;
+                    cmd.Parameters["@ActifEntree"].Value = ComboActive.Value;
 
                     cmd.Parameters.Add("@Ok", MySqlDbType.Int32);
                     cmd.Parameters["@Ok"].Direction = ParameterDirection.Output;

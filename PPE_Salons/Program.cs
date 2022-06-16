@@ -29,9 +29,11 @@ namespace PPE_Salons
 
                 int NiveauUtilisateur = MonFormLogin.Niveau;
                 int IdNomUtilisateur = MonFormLogin.IdUtilisateur;
+                string NomUtilisateur = MonFormLogin.NomUtilisateur;
+                string PortChoix = MonFormLogin.PortChoix;
 
                 MonFormLogin.Close();
-                Application.Run(new Form1(NiveauUtilisateur, IdNomUtilisateur));
+                Application.Run(new Form1(NiveauUtilisateur, IdNomUtilisateur, NomUtilisateur, PortChoix));
             }
             else
             {
@@ -47,10 +49,10 @@ namespace PPE_Salons
         static int checkUserLevel(String nom)
         {
             DBConnection dbCon = new DBConnection();
-            dbCon.Server = "127.0.0.1";
-            dbCon.DatabaseName = "salon";
-            dbCon.UserName = "root";
-            dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");
+            dbCon.Server = "ppebelletablecerfal.chaisgxhr4z6.eu-west-3.rds.amazonaws.com";
+            dbCon.DatabaseName = "PPE_Joey";
+            dbCon.UserName = "admin";
+            dbCon.Password = Crypto.Encrypt("renard2020");
 
             Login MonFormLogin = new Login();
 

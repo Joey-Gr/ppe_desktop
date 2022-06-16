@@ -50,12 +50,12 @@
             this.MaGrid.Name = "MaGrid";
             this.MaGrid.RowHeadersWidth = 51;
             this.MaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MaGrid.Size = new System.Drawing.Size(563, 486);
+            this.MaGrid.Size = new System.Drawing.Size(735, 486);
             this.MaGrid.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(429, 55);
+            this.button1.Location = new System.Drawing.Point(602, 56);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(164, 27);
@@ -66,7 +66,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 97);
+            this.button2.Location = new System.Drawing.Point(774, 103);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -77,7 +77,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(601, 154);
+            this.button3.Location = new System.Drawing.Point(774, 160);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
@@ -88,7 +88,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(601, 222);
+            this.button4.Location = new System.Drawing.Point(775, 213);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
@@ -102,7 +102,7 @@
             this.tbNom.Location = new System.Drawing.Point(73, 58);
             this.tbNom.Margin = new System.Windows.Forms.Padding(4);
             this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(239, 22);
+            this.tbNom.Size = new System.Drawing.Size(413, 22);
             this.tbNom.TabIndex = 5;
             // 
             // Nom
@@ -117,7 +117,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(321, 55);
+            this.button5.Location = new System.Drawing.Point(494, 55);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 28);
@@ -129,7 +129,7 @@
             // btnAdmin
             // 
             this.btnAdmin.ForeColor = System.Drawing.Color.Crimson;
-            this.btnAdmin.Location = new System.Drawing.Point(601, 26);
+            this.btnAdmin.Location = new System.Drawing.Point(774, 32);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(100, 23);
             this.btnAdmin.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(611, 278);
+            this.btnTest.Location = new System.Drawing.Point(784, 284);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 596);
+            this.ClientSize = new System.Drawing.Size(913, 596);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.button5);
