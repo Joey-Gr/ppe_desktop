@@ -83,9 +83,9 @@ namespace PPE_Salons
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(87, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 17);
+            this.label1.Size = new System.Drawing.Size(100, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "nom participant";
+            this.label1.Text = "nom utilisateur";
             // 
             // label2
             // 
@@ -102,9 +102,9 @@ namespace PPE_Salons
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(580, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(221, 17);
+            this.label3.Size = new System.Drawing.Size(217, 17);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Creation Participant - Page Admin";
+            this.label3.Text = "Creation Utilisateur - Page Admin";
             // 
             // label4
             // 

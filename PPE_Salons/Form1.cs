@@ -91,10 +91,20 @@ namespace PPE_Salons
         private void InitializeTableau()
         {
             DBConnection dbCon = new DBConnection();
-            dbCon.Server = "127.0.0.1";
-            dbCon.DatabaseName = "salon";
-            dbCon.UserName = "root";
-            dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");//Pour éviter d'afficher le mot de passe en clair dans le code
+            if (PortChoix == "Distant")
+            {
+                dbCon.Server = "ppebelletablecerfal.chaisgxhr4z6.eu-west-3.rds.amazonaws.com";
+                dbCon.DatabaseName = "PPE_Joey";
+                dbCon.UserName = "admin";
+                dbCon.Password = Crypto.Decrypt("tr9y0URXywxHt1XgTEn4yg==");
+            }
+            else
+            {
+                dbCon.Server = "127.0.0.1";
+                dbCon.DatabaseName = "salon";
+                dbCon.UserName = "root";
+                dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");
+            }
             if (dbCon.IsConnect())
             {
                 string query = "SELECT id, nom, prenom, email, qrcode FROM participant ORDER BY nom";
@@ -129,13 +139,23 @@ namespace PPE_Salons
         private void button5_Click(object sender, EventArgs e)
         {
             DBConnection dbCon = new DBConnection();
-            dbCon.Server = "127.0.0.1";
-            dbCon.DatabaseName = "salon";
-            dbCon.UserName = "root";
-            dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");//Pour éviter d'afficher le mot de passe en clair dans le code
+            if (PortChoix == "Distant")
+            {
+                dbCon.Server = "ppebelletablecerfal.chaisgxhr4z6.eu-west-3.rds.amazonaws.com";
+                dbCon.DatabaseName = "PPE_Joey";
+                dbCon.UserName = "admin";
+                dbCon.Password = Crypto.Decrypt("tr9y0URXywxHt1XgTEn4yg==");
+            }
+            else
+            {
+                dbCon.Server = "127.0.0.1";
+                dbCon.DatabaseName = "salon";
+                dbCon.UserName = "root";
+                dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");
+            }
             if (dbCon.IsConnect())
             {
-                string query = "SELECT id, nom, prenom, email FROM participant WHERE nom =?nom_P ORDER BY nom";
+                string query = "SELECT id, nom, prenom, email, qrcode FROM participant WHERE nom =?nom_P OR prenom =?nom_P ORDER BY nom";
                 query = Tools.PrepareLigne(query, "?nom_P", Tools.PrepareChamp(tbNom.Text, "Chaine"));
 
                 var cmd = new MySqlCommand(query, dbCon.Connection);

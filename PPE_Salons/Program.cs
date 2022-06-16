@@ -46,6 +46,8 @@ namespace PPE_Salons
             Application.Run(new Form1());*/
         }
 
+
+        /*
         static int checkUserLevel(String nom)
         {
             DBConnection dbCon = new DBConnection();
@@ -74,5 +76,6 @@ namespace PPE_Salons
                 return -1;
             }
         }
+        */
     }
 }

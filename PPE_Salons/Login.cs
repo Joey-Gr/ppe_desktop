@@ -140,13 +140,26 @@ namespace PPE_Salons
             this.DialogResult = DialogResult.Cancel;
         }
 
+
+        // Fonction remplacée par procédure stoquée
         private bool ConnectUser(String user)
         {
             DBConnection dbCon = new DBConnection();
-            dbCon.Server = "127.0.0.1";
-            dbCon.DatabaseName = "salon";
-            dbCon.UserName = "root";
-            dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");
+            ComboValue ComboActive = (ComboValue)portChoix.SelectedItem;
+            if (ComboActive.Value == "1")
+            {
+                dbCon.Server = "ppebelletablecerfal.chaisgxhr4z6.eu-west-3.rds.amazonaws.com";
+                dbCon.DatabaseName = "PPE_Joey";
+                dbCon.UserName = "admin";
+                dbCon.Password = Crypto.Decrypt("tr9y0URXywxHt1XgTEn4yg==");
+            }
+            else
+            {
+                dbCon.Server = "127.0.0.1";
+                dbCon.DatabaseName = "salon";
+                dbCon.UserName = "root";
+                dbCon.Password = Crypto.Decrypt("O2Hp8L98TD3dR6vTnWIcIg==");
+            }
             if (dbCon.IsConnect())
             {
                 String sqlString = "SELECT id FROM utilisateur WHERE nom = ?nom_P";
